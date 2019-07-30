@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>A really bad search</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Search for something</h1>
+        <form action="/search" method="POST">
+            {% csrf_token %}
+            <input type="text" name="search_input" placeholder="good luck" />
+            <button type="submit" class="btn btn-warning">whatever</button>
+        </form>
+        <form action="/real_search" method="POST">
+            {% csrf_token %}
+            <input type="text" name="real_search" placeholder="good luck" />
+            <button type="submit" class="btn btn-primary">want a real search?</button>
+        </form>
+    </div>
+</body>
+</html>
